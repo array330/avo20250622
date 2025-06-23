@@ -1,11 +1,6 @@
-Django>=3.2
-djangorestframework>=3.14
-drf-spectacular>=0.26
+Django>=4.0
 celery>=5.0
-gunicorn==23.0.0
 redis>=4.0
-psycopg2-binary>=2.8
-openai>=0.27.0
-pytest>=6.0
-pytest-django>=4.0
-coverage>=5.0
+psycopg2-binary>=2.9
+djangorestframework>=3.13
+drf-spectacular>=0.23

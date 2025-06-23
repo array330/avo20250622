@@ -1,0 +1,14 @@
+flowchart TD
+    A[Client] -->|POST /jobs/ <br> guideline_text| B[Django API (/jobs)]
+    B -->|Create Job with event_id| C[(PostgreSQL: Job Model)]
+    B -->|Trigger Celery Task| D[Celery Worker: GPT_job]
+
+    D -->|Set status: IN_PROGRESS| E[(Redis: status:{event_id})]
+    D -->|Generate summary + checklist| F[(Checklist List)]
+    F[(Redis: checklist:{event_id})]
+    D -->|Set status: COMPLETED| E
+
+    A -->|GET /jobs/{event_id}/| G[Django API: get_job_status]
+    G -->|Read status| E
+    G -->|If COMPLETED, read checklist| F
+    G -->|Return JSON with status and result| A
