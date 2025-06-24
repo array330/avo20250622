@@ -1,3 +1,4 @@
 .APIKey.txt
+.coverage
 **/*.pyc
 **/.*.swp
