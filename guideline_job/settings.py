@@ -21,11 +21,11 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-ROOT_URLCONF = 'your_project_name.urls'
+ROOT_URLCONF = 'guideline_job.urls'
 
 TEMPLATES = []
 
-WSGI_APPLICATION = 'your_project_name.wsgi.application'
+WSGI_APPLICATION = 'guideline_job.wsgi.application'
 
 DATABASES = {
     'default': {
